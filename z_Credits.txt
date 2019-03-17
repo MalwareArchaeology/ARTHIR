@@ -1,0 +1,12 @@
+Shout outs to those that helped with this project:
+--------------------------------------------------
+
+Michael Gough - @Hacker Hurricane - Malware Archaeology & IMF Security
+Olaf Hartong - @OlafHartong
+Josh Rickard - @MSAdministrator of http://letsautomate.it
+
+Want to contribute?
+
+Send us an email - info@IMFSecurity.com
+
+

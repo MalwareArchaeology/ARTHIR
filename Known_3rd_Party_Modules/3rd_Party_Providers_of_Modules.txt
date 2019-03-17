@@ -1,0 +1,4 @@
+This folder contains known modules from 3rd party tools that have created ARTHIR modules.
+
+Each file will contain information where to get the modules.
+ 

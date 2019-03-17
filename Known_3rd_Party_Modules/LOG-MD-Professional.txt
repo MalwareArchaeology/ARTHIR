@@ -1,0 +1,88 @@
+LOG-MD Professional and Consulting ARTHIR modules
+Updated - March 2019
+
+Function:  LOG-MD is a Log Harvesting, Threat Hunting, and Incident Response tool.
+
+website:  LOG-MD.com
+
+How to get modules:  Modules are included with the purchase of LOG-MD-Professional.  A guide for 
+using LOG-MD-Professional with ARTHIR is included with the purchase of LOG-MD-Professional
+
+Options:  To push LOG-MD configuration files, create a zip file and push them out with the Get-LOG-MD-Free_Configs.module
+
+---------------------------------------------------------------------------------------------------------------------------
+
+There are modules available for all LOG-MD-Professional and Consulting features.  
+Also available are modules to schedule tasks for many LOG-MD-Professional features.
+The following modules are available;
+
+RECON SCRIPTS - Get information you want to populate Hosts.txt with
+-------------------------------------------------------------------
+
+  - Recon_List_of_MAC_OS_Versions.ps1	List of Apple OS systems from AD
+  - Recon_List_of_WS_OS_Versions.ps1	List of Windows systems from AD
+  - Recon-Ping_Alive.ps1				Ping system in Hosts.txt for being online
+
+INFO GATHERING SCRIPTS
+----------------------
+  - Get-OS_Version_Details.ps1			Get System name, OS Version and Architecture
+  - Get-PS_Version_Logging_Details.ps1	Get PowerShell version, and logging settings
+  
+LOG-MD-Professional MODULES
+---------------------------
+  - Get-LOG-MD-API-Settings.ps1
+  - Get-LOG-MD-Pro_1_Configs.ps1
+  - Get-LOG-MD-Pro_2_Configs_Registry.ps1
+  - Get-LOG-MD-Pro_3_Configs_Hash.ps1
+  - Get-Log-MD-Pro_Settings.ps1
+  - Get-Log-MD-Pro_AutoRuns.ps1
+  - Get-Log-MD-Pro_AutoRuns_VirusTotal.ps1
+  - Get-Log-MD-Pro_AutoRuns_WMI.ps1
+  - Get-Log-MD-Pro_Hash_Baseline.ps1
+  - Get-Log-MD-Pro_Hash_Compare.ps1
+  - Get-Log-MD-Pro_Logs_1_Day.ps1
+  - Get-Log-MD-Pro_Logs_1_Day_WhoIS.ps1
+  - Get-Log-MD-Pro_Logs_2_Days.ps1
+  - Get-Log-MD-Pro_Logs_2_Days_WhoIS.ps1
+  - Get-Log-MD-Pro_Logs_3_Days.ps1
+  - Get-Log-MD-Pro_Logs_3_Days_WhoIS.ps1
+  - Get-Log-MD-Pro_Logs_4_Days.ps1
+  - Get-Log-MD-Pro_Logs_4_Days_WhoIS.ps1
+  - Get-Log-MD-Pro_Logs_5_Days.ps1
+  - Get-Log-MD-Pro_Logs_5_Days_WhoIS.ps1
+  - Get-Log-MD-Pro_Logs_6_Days.ps1
+  - Get-Log-MD-Pro_Logs_6_Days_WhoIS.ps1
+  - Get-Log-MD-Pro_Logs_7_Days.ps1
+  - Get-Log-MD-Pro_Logs_7_Days_WhoIS.ps1
+  - Get-Log-MD-Pro_Logs_99_Days.ps1
+  - Get-Log-MD-Pro_Logs_99_Days_WhoIS.ps1
+  - Get-Log-MD-Pro_PS_Logs_1_Day.ps1
+  - Get-Log-MD-Pro_PS_Logs_2_Days.ps1
+  - Get-Log-MD-Pro_PS_Logs_3_Days.ps1
+  - Get-Log-MD-Pro_PS_Logs_4_Days.ps1
+  - Get-Log-MD-Pro_PS_Logs_5_Days.ps1
+  - Get-Log-MD-Pro_PS_Logs_6_Days.ps1
+  - Get-Log-MD-Pro_PS_Logs_7_Days.ps1
+  - Get-Log-MD-Pro_PS_Logs_99_Days.ps1
+  - Get-Log-MD-Pro_Reg_Baseline.ps1
+  - Get-Log-MD-Pro_Reg_Compare.ps1
+  - Get-Log-MD-Pro_Reg_Large_Keys.ps1
+  - Get-Log-MD-Pro_Running_Processes.ps1
+  - Get-Log-MD-Pro_Running_Processes_VirusTotal.ps1
+  - Get-Log-MD-Pro_SRUM.ps1
+
+LOG-MD SCHEDULE TASKS MODULES
+-----------------------------
+  - Get-Log-MD-Pro_AutoRuns_Check_VT_Hourly_Task.ps1                    
+  - Get-Log-MD-Pro_AutoRuns_Hourly_Task.ps1                             
+  - Get-Log-MD-Pro_Large_Keys_Daily_Task.ps1                            
+  - Get-Log-MD-Pro_Logs_Daily_Task.ps1                                  
+  - Get-Log-MD-Pro_PS_Logs_Daily_Task.ps1                               
+  - Get-Log-MD-Pro_Running_Processes_Check_VT_Hourly_Task.ps1           
+  - Get-Log-MD-Pro_Running_Processes_Hourly_Task.ps1                    
+  - Get-Log-MD-Pro_WMI_Persistence_Daily_Task.ps1                       
+
+CLEANUP LOG-MD MODULES
+----------------------
+  - Get-Log-MD-Pro_z_Cleanup_All.ps1
+  - Get-Log-MD-Pro_z_Cleanup_Reports.ps1

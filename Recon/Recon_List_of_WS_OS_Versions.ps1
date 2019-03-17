@@ -1,0 +1,1 @@
+Get-ADComputer -Filter { OperatingSystem -Like '*WINDOWS*' } -Properties OperatingSystem, LastLogonTimestamp | Select Name, OperatingSystem, @{N='LastLogonTimestamp'; E={[DateTime]::FromFileTime($_.LastLogonTimestamp)}} | Export-Csv -Path "Win_Systems.csv"

@@ -1,0 +1,23 @@
+LOG-MD Free Edition ARTHIR modules
+Updated - March 2019
+
+Function:  LOG-MD is a Log Harvesting, Threat Hunting, and Incident Response tool.
+
+website:  LOG-MD.com
+
+How to get modules:  Modules are avaialble with ARTHIR and at LOG-MD.com\arthir
+
+Tool:  LOG-MD Free Edition.  Download it from the website above and place the binary in \bin
+
+Options:  To push LOG-MD configuration files, create a zip file and push them out with the Get-LOG-MD-Free_Configs.module
+
+---------------------------------------------------------------------------------------------------------------------------
+
+Several LOG-MD-Free Edition modules are included with ARTHIR.  The following are included;
+
+  - Get-LOG-MD-Free_AutoRuns.ps1
+  - Get-LOG-MD-1-Day_Logs.ps1
+  - Get-LOG-MD-Free_Sched_AutoRuns.ps1
+
+
+ 
