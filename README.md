@@ -7,11 +7,31 @@ Initial release ver 1.0 - Mar 2019
 
 BACKGROUND
 ----------
-This is a fork of the popular KANSA Incident Response Framework.  It has been changed to include easier use
-of binaries and standard PowerShell scripts.  The standard results are now pulled back to the launching host
-making it easier to script and run your favorite utilities, tools, and PowerShell scripts.
+WHAT IS ARTHIR?
 
-See the \Documentation directory for more information.
+ATT&CK Remote Threat Hunting Incident Response (ARTHIR) is an update to the popular KANSA framework. ARTHIR works differently than KANSA in that you can create output with your ARTHIR module and then the results are pulled back to the launching host. KANSA only pulled console output back which limited its capabilities. KANSA was unable to execute binary utilities and tools such as LOGMD remotely and pull reports back. ARTHIR can run scripts as KANSA does, but also binary utilities and
+tools, making ARTHIR much more flexible than KANSA.
+
+KANSA is a modular incident response framework in Powershell to remotely run various PowerShell commands on a remote system to investigate a suspect system. The KANSA project is no longer maintained by the creator Dave Hull, but is still used and updated by some users. 
+
+ARTHIR was created to provide a solution that can push out, run, and pull back LOG-MD-Pro reports, (or any other tool, script or binary you might like to use) while doing investigations. The ARTHIR project is a free Open Source project on Github and may be found here;
+ - www.ARTHIR.com
+ - https://github.com/MalwareArchaeology/ARTHIR
+ 
+Templates have been provided for scripts, binary utilities and tools, tasks, and Zip archives so that you
+may use it and create your own solutions.
+
+ARTHIR SLACK CHANNEL
+
+You may join the ARTHIR Slack channel found on the LOG-MD and/or ‘Brakeing Down Security’ Slack channels. You have been invited to the LOG-MD Slack channel, but let us know if you need to be added.
+To join the BDS #Slack Channel! Email us at;
+ - bds.podcast@gmail.com
+ - or DM us on Twitter:  @brakesec
+
+WHY ARTHIR?
+
+ARTHIR provides a modular approach that allows users to run existing PowerShell modules included with ARTHIR, create their own, or as in our case push, run, and retrieve LOG-MD-Pro and retrieve the reports.  The modular nature of ARTHIR allows you to run a single module (aka PowerShell script), push and run a binary, execute one or many modules using the modules.conf file. For our purposes modifications to the core KANSA script was required and the changes extensive. We have provided modules that allows
+you to run all the features of LOG-MD-Pro and retrieve the results.
 
 Running ARTHIR
 --------------
