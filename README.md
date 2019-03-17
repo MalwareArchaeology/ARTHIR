@@ -1,6 +1,10 @@
 # ARTHIR
 ATT&amp;CK Remote Threat Hunting Incident Response
 
+VERSION
+-------
+Initial release ver 1.0 - Mar 2019
+
 BACKGROUND
 ----------
 This is a fork of the popular KANSA Incident Response Framework.  It has been changed to include easier use
