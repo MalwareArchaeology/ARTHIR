@@ -88,9 +88,9 @@ if (Test-Path $ARTHIR_OutputDir) {
 $schedule = new-object -com("Schedule.Service") 
 $schedule.connect() 
 $tasks = $schedule.getfolder("\").gettasks(0)
-$tasks | select Name | ? { $_.Name -eq $TaskName }
+$tasks | Select-Object Name | Where-Object { $_.Name -eq $TaskName }
 #
-if ($tasks | select Name | ? { $_.Name -eq $TaskName }) {
+if ($tasks | Select-Object Name | Where-Object { $_.Name -eq $TaskName }) {
     SchTasks.exe /Delete /TN $TaskName /F | out-file -filepath $ARTHIR_OutputDir\$SysName-$ARTHIR_ReportName
  } else {
     Write-Output $TaskName "$TaskName does not already exist on the system" | out-file -filepath $ARTHIR_OutputDir\$SysName-$ARTHIR_ReportName

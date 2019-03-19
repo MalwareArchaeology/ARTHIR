@@ -1,1 +1,1 @@
-Get-ADComputer -Filter { OperatingSystem -Like '*MAC*' } -Properties OperatingSystem, LastLogonTimestamp | Select Name, OperatingSystem, LastLogonTimestamp | Export-Csv -Path "MAC_Systems.csv"
+Get-ADComputer -Filter { OperatingSystem -Like '*MAC*' } -Properties OperatingSystem, LastLogonTimestamp | Select-Object Name, OperatingSystem, LastLogonTimestamp | Export-Csv -Path "MAC_Systems.csv"
