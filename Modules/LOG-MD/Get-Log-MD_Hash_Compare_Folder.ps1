@@ -123,10 +123,10 @@ Move-Item -Path "$env:SystemRoot\$Tool_Name" -Destination $ARTHIR_Dir -Force
 $schedule = new-object -com("Schedule.Service") 
 $schedule.connect() 
 $tasks = $schedule.getfolder("\").gettasks(0)
-$tasks | select Name | ? { $_.Name -eq $TaskName }
+$tasks | Select-Object Name | Where-Object { $_.Name -eq $TaskName }
 #$tasks.Settings.Priority = $TaskPriorityLevel
 #
-if ($tasks | select Name | ? { $_.Name -eq $TaskName }) {
+if ($tasks | Select-Object Name | Where-Object { $_.Name -eq $TaskName }) {
     Write-Output "Checking for existing task and deleting it" | out-file -Append -filepath $ARTHIR_OutputDir\$SysName-Hash_Compare_Status.txt
     SchTasks.exe /Delete /TN $TaskName /F | out-file -Append -filepath $ARTHIR_OutputDir\$SysName-Hash_Compare_Status.txt
  } else {

@@ -436,7 +436,7 @@ Param(
     if (Test-Path($Modconf)) {
         Write-Verbose "Found ${Modconf}."
         # ARTHIR - ignore blank and commented lines, trim misc. white space
-        Get-Content $Modconf | Foreach-Object { $_.Trim() } | ? { $_ -gt 0 -and (!($_.StartsWith("#"))) } | Foreach-Object { $Module = $_
+        Get-Content $Modconf | Foreach-Object { $_.Trim() } | Where-Object { $_ -gt 0 -and (!($_.StartsWith("#"))) } | Foreach-Object { $Module = $_
             # ARTHIR - verify listed modules exist
             $ModuleScript = ($Module -split " ")[0]
             $ModuleArgs   = ($Module -split [regex]::escape($ModuleScript))[1].Trim()
@@ -464,7 +464,7 @@ Param(
 function Load-AD {
     # ARTHIR - no targets provided so we'll query AD to build it, need to load the AD module
     Write-Debug "Entering $($MyInvocation.MyCommand)"
-    if (Get-Module -ListAvailable | ? { $_.Name -match "ActiveDirectory" }) {
+    if (Get-Module -ListAvailable | Where-Object { $_.Name -match "ActiveDirectory" }) {
         $Error.Clear()
         Import-Module ActiveDirectory
         if ($Error) {
@@ -801,7 +801,7 @@ Param(
 				{
 					$dir = Split-Path -Path $file
 					$dirLength = $dir.length
-					$RemoteFiles = Invoke-Command -Session $PSSession -ScriptBlock {Get-ChildItem $using:file -rec | where { ! $_.PSIsContainer }}
+					$RemoteFiles = Invoke-Command -Session $PSSession -ScriptBlock {Get-ChildItem $using:file -rec | Where-Object { ! $_.PSIsContainer }}
 					foreach ($RemoteFile in $RemoteFiles) 
 					{
 						$FilePath = $OutputPath+$ModuleName+"\"+$PSSession.ComputerName+"\"+([string]$RemoteFile.FullName).Substring($dirLength+1)
@@ -1163,7 +1163,7 @@ Param(
 
     if (Get-Command -Name Logparser.exe) {
         $AnalysisScripts = @()
-        $AnalysisScripts = Get-Content "$StartingPath\Analysis\Analysis.conf" | Foreach-Object { $_.Trim() } | ? { $_ -gt 0 -and (!($_.StartsWith("#"))) }
+        $AnalysisScripts = Get-Content "$StartingPath\Analysis\Analysis.conf" | Foreach-Object { $_.Trim() } | Where-Object { $_ -gt 0 -and (!($_.StartsWith("#"))) }
 
         $AnalysisOutPath = $OutputPath + "\AnalysisReports\"
         [void] (New-Item -Path $AnalysisOutPath -ItemType Directory -Force)
