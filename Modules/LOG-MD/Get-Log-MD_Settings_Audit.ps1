@@ -39,7 +39,7 @@ the binary to be used and how to handle output from this script.
 Use the wildcard * to capture the systemname in the report.
  - Example:  C:\Program Files\LMD\Results\*Report_AutoRuns*
 
-BINDEP .\Modules\bin\Log-MD.exe
+BINDEP .\Modules\bin\Log-MD-Pro.exe
 DOWNLOAD C:\Program Files\LMD\Results\*Report_Audit_Score*
 #>
 $Tool_Name = "LOG-MD.exe"
@@ -47,6 +47,7 @@ $ARTHIR_Dir = "C:\Program Files\LMD"
 $ARTHIR_OutputDir = "C:\Program Files\LMD\Results"
 $ARTHIR_ReportName = "Report_Audit_Score.txt"
 $RenameReports = "Yes"
+$DeletePassReport = "No"
 $TextString = "Score = PASS"
 $SysName = $env:computername
 $WriteEventLogEntry = "Yes"
@@ -77,11 +78,15 @@ if (Test-Path $ARTHIR_Dir\$Tool_Name) {
 #
 #  Delete report if system passed 
 #
-if (Select-String -Path $ARTHIR_OutputDir\$ARTHIR_ReportName -Pattern $TextString) {
+  If ($DeletePassReport -eq 'Yes') {
+    if (Select-String -Path $ARTHIR_OutputDir\$ARTHIR_ReportName -Pattern $TextString) {
     Remove-Item -Path $ARTHIR_OutputDir\$ARTHIR_ReportName -force
 } else {
-    Write-Output "You Lose Fix Yur Shit"
+    Write-Output "You passed your Advanced Audit Policy Check"
   }
+  } else {
+    Write-Output "You did not pass your Advanced Audit Policy Check"
+}
 #
 # Check for output to exist
 #  
@@ -96,9 +101,8 @@ If ($RenameReports -eq 'No') {
   Write-Output "Reports not being renamed"
   }  
   else {
-    Remove-Item -path $ARTHIR_OutputDir\$SysName-Report_Configuration* -force
-    Move-Item -Path Report_Configuration* -Destination $ARTHIR_OutputDir
-    Get-ChildItem $ARTHIR_OutputDir\Report_Configuration* | Rename-Item -NewName { $_.name -Replace 'Report_Configuration*',"$SysName-Report_Configuration*" }  
+    Remove-Item -path $ARTHIR_OutputDir\$SysName-Report_Audit_Score* -force
+    Get-ChildItem $ARTHIR_OutputDir\Report_Audit_Score.txt* | Rename-Item -NewName { $_.name -Replace 'Report_Audit_Score',"$SysName-Report_Audit_Score" }  
 }
 
 #
@@ -109,8 +113,8 @@ If ($WriteEventLogEntry -eq 'No') {
   }  
   elseif ([System.Diagnostics.EventLog]::SourceExists($EventSource) -eq $False) {
     New-EventLog -LogName Application -Source $EventSource
-    Write-EventLog -LogName Application -EntryType Information -EventId $Event_ID -Source $EventSource -Message 'LOG-MD AutoRuns executed by Arthir'
+    Write-EventLog -LogName Application -EntryType Information -EventId $Event_ID -Source $EventSource -Message 'LOG-MD Audit Score executed by Arthir'
  }
   else {
-    Write-EventLog -LogName Application -EntryType Information -EventId $Event_ID -Source $EventSource -Message 'LOG-MD AutoRuns executed by Arthir'
+    Write-EventLog -LogName Application -EntryType Information -EventId $Event_ID -Source $EventSource -Message 'LOG-MD Audit Score executed by Arthir'
     }
