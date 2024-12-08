@@ -15,18 +15,10 @@ tools, making ARTHIR much more flexible than KANSA.
 KANSA is a modular incident response framework in Powershell to remotely run various PowerShell commands on a remote system to investigate a suspect system. The KANSA project is no longer maintained by the creator Dave Hull, but is still used and updated by some users. 
 
 ARTHIR was created to provide a solution that can push out, run, and pull back LOG-MD-Pro reports, (or any other tool, script or binary you might like to use) while doing investigations. The ARTHIR project is a free Open Source project on Github and may be found here;
- - www.ARTHIR.com
  - https://github.com/MalwareArchaeology/ARTHIR
  
 Templates have been provided for scripts, binary utilities and tools, tasks, and Zip archives so that you
 may use it and create your own solutions.
-
-ARTHIR SLACK CHANNEL
-
-You may join the ARTHIR Slack channel found on the LOG-MD and/or ‘Brakeing Down Security’ Slack channels. You have been invited to the LOG-MD Slack channel, but let us know if you need to be added.
-To join the BDS #Slack Channel! Email us at;
- - bds.podcast@gmail.com
- - or DM us on Twitter:  @brakesec
 
 WHY ARTHIR?
 
